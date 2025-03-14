@@ -1,0 +1,4 @@
+# Convert everything except Windows batch files to Unix line endings (for Windows Docker users)
+* text=auto eol=lf
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf

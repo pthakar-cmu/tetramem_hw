@@ -1,0 +1,23 @@
+
+services:
+  tetramem:
+    container_name: tetramem_container
+    platform: linux
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        DOCKER_UID: ${DOCKER_UID:-1000}
+        DOCKER_GID: ${DOCKER_GID:-1000}
+    privileged: true
+    tty: true
+    network_mode: host
+    volumes:
+      - type: bind
+        source: ${PWD}
+        target: /workdir
+      - type: bind
+        source: $HOME/.Xauthority
+        target: /root/.Xauthority
+        read_only: false
+    restart: "no"

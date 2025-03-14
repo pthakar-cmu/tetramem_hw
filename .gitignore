@@ -1,0 +1,8 @@
+# VSCode files
+.vscode/
+
+# Node artifact files
+build/
+
+#Raylib-quickstart (Pre-req Repository cloned inside Root Directory)
+raylib-quickstart/
